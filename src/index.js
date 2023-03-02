@@ -5,6 +5,11 @@ const app = express()
 
 app.use(express.json())
 
+const cors = require('cors')
+app.use(cors({
+    origin: '*'
+}));
+
 mongoose.connect("mongodb+srv://harsh258:Wb5QwC0mG0iUBIXS@new-cluster.baoq1vx.mongodb.net/Post_App-DB",{useNewUrlParser: true})
 .then(()=>console.log("MongoDB is Connected"))
 .catch((error)=>console.log(error))
