@@ -13,7 +13,7 @@ const ShowPost = () => {
 
     let [editpst,setEditpst]=useState(false)
     let [rep,setRep]=useState(false)
-    let [comm,setComm]=useState(false)
+    // let [comm,setComm]=useState(false)
 
     let selId = _id
 
