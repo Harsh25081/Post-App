@@ -3,7 +3,7 @@ const { CreateComment, GetComment, UpdateComment, DeleteComment } = require("../
 const { CreatePost, GetPost, UpdatePost, DeletePost } = require("../controllers/postController")
 const router = express.Router()
 
-router.get("/test-me",(req,res)=>{
+router.get("/",(req,res)=>{
     res.send("This is the test API")
 })
 
