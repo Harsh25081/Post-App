@@ -7,7 +7,7 @@ const App = () => {
     const [posts,setPosts]=useState([])
 
     const getallposts = ()=>{
-        axios.get("http://localhost:3001/getpost")
+        axios.get("https://post-app-lake.vercel.app/getpost")
         .then((res)=>{setPosts(res.data.data)})
         .catch((err)=>{console.log(err.message)})
     }

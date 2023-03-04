@@ -22,7 +22,7 @@ const ShowPost = () => {
       }
 
     const getComment = () => {
-        axios.get("http://localhost:3001/getcomment")
+        axios.get("https://post-app-lake.vercel.app/getcomment")
             .then((res) => { setComment(res.data.data) })
             .catch((err) => { console.log(err.message) })
     }
@@ -32,26 +32,26 @@ const ShowPost = () => {
     })
 
     const deletepost = (_id) => {
-        axios.put("http://localhost:3001/deletepost", { _id })
+        axios.put("https://post-app-lake.vercel.app/deletepost", { _id })
             .then((res) => { alert("Deleted Successfully"); navigate("/") })
             .catch((err) => { console.log(err.message) })
     }
 
     const deleteComment = (_id) => {
-        axios.put("http://localhost:3001/deletecomment", { _id })
+        axios.put("https://post-app-lake.vercel.app/deletecomment", { _id })
             .then((res) => { alert("Deleted Successfully") })
             .catch((err) => { console.log(err.message) })
     }
 
     const deleteReply = (_id, replyId) => {
-        axios.put("http://localhost:3001/deletecomment", { _id, replyId })
+        axios.put("https://post-app-lake.vercel.app/deletecomment", { _id, replyId })
             .then((res) => { alert("Deleted Successfully") })
             .catch((err) => { console.log(err.message) })
     }
 
     const editpost = (_id,post)=>{
         let Post = post;
-        axios.put("http://localhost:3001/updatepost", { _id,Post})
+        axios.put("https://post-app-lake.vercel.app/updatepost", { _id,Post})
             .then((res) => { console.log(res.data) })
             .catch((err) => { console.log(err.message) })
             setEditpst(false);
@@ -59,7 +59,7 @@ const ShowPost = () => {
     }
 
     const editcomment = (_id,Comment)=>{
-        axios.put("http://localhost:3001/updatecomment", { _id,Comment})
+        axios.put("https://post-app-lake.vercel.app/updatecomment", { _id,Comment})
             .then((res) => {console.log(res.data) })
             .catch((err) => { console.log(err.message) })
             setEditpst(false);
@@ -68,7 +68,7 @@ const ShowPost = () => {
     }
 
     const editreply = (_id,Reply,Name)=>{
-        axios.put("http://localhost:3001/updatecomment", { _id,Reply,Name})
+        axios.put("https://post-app-lake.vercel.app/updatecomment", { _id,Reply,Name})
             .then((res) => { console.log(res.data) })
             .catch((err) => { console.log(err.message) })
             setEditpst(false);
@@ -80,7 +80,7 @@ const ShowPost = () => {
         let PostId = selId;
         let Name = Namee;
         let Comment = post;
-        axios.post("http://localhost:3001/createcomment", { PostId,Name,Comment})
+        axios.post("https://post-app-lake.vercel.app/createcomment", { PostId,Name,Comment})
             .then((res) => { console.log(res.data) })
             .catch((err) => { console.log(err.message) })
             setNamee("");setPost("");

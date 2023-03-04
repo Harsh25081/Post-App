@@ -11,7 +11,7 @@ const CreatePost = ()=>{
 
 
     const createPost = (e)=>{
-        axios.post("http://localhost:3001/createpost",{Name,Post})
+        axios.post("https://post-app-lake.vercel.app/createpost",{Name,Post})
         // .then((res)=>{console.log(res.data.data)})
         .then((res)=>{navigate(
             "/showpost",
