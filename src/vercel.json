@@ -2,6 +2,6 @@
     "version": 2,
     "name": "demo-node",
     "builds": [{ "src": "index.js", "use": "@vercel/node" }],
-    "routes": [{ "src": "/(.*)", "dest": "/route.js" }]
+    "routes": [{ "src": "/(.*)", "dest": "/index.js" }]
   }
   
