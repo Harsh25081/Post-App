@@ -67,7 +67,9 @@ const ShowPost = () => {
             refreshPage()
     }
 
-    const editreply = (_id,Reply,Name)=>{
+    const editreply = (comId,Reply,Namee)=>{
+        let _id = comId;
+        let name = Namee
         axios.put("https://post-app-lake.vercel.app/updatecomment", { _id,Reply,Name})
             .then((res) => { console.log(res.data) })
             .catch((err) => { console.log(err.message) })
