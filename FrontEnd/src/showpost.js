@@ -13,7 +13,7 @@ const ShowPost = () => {
 
     let [editpst,setEditpst]=useState(false)
     let [rep,setRep]=useState(false)
-    // let [comm,setComm]=useState(false)
+    let [comm,setComm]=useState(false)
 
     let selId = _id
 
@@ -75,7 +75,7 @@ const ShowPost = () => {
             .catch((err) => { console.log(err.message) })
             setEditpst(false);
             setRep("")
-            refreshPage()
+            // refreshPage()
     }
 
     const createComment = (selId, Namee,post)=>{
@@ -155,11 +155,11 @@ const ShowPost = () => {
                                                     <p style={{ "font-weight": "bold", height: "23px", paddingTop: "2px", paddingLeft: "10px" }}>{Name}</p>
                                                     {/* <p style={{ width: "100%", marginLeft: "30px" }}>{reply}</p> */}
                                                     <p>{reply}</p>
-                                                    {/* {comm===true && <textarea placeholder={reply} onChange={(e)=>{console.log(e.target.value);setPost(e.target.value);}} style={{height:"50%",width:"99%",resize:"none",border:"transparent",marginLeft:"2px"}}>{reply}</textarea>} */}
+                                                    {comm===true && <textarea placeholder={reply} onChange={(e)=>{console.log(e.target.value);setPost(e.target.value);}} style={{height:"50%",width:"99%",resize:"none",border:"transparent",marginLeft:"2px"}}>{reply}</textarea>}
                                             </div>
                                                 {/* <button>Edit</button>Edit Button */}
-                                                {/* {comm===false && <button onClick={()=>{setComm(true)}}>Edit</button>} */}
-                                                {/* {comm===true && <button onClick={() => editreply(replyId,reply,Name)}>Save</button>} */}
+                                                {comm===false && <button onClick={()=>{setComm(true)}}>Edit</button>} 
+                                                {comm===true && <button onClick={() => editreply(replyId,reply,Name)}>Save</button>}
                                                 
                                                 <button onClick={() => deleteReply(comId, replyId)}>Delete</button>{/*Delete Button*/}
                                             </div>}
