@@ -25,8 +25,20 @@ exports.GetComment = async (req,res)=>{
 exports.UpdateComment = async (req,res)=>{
     try {
         const data = req.body
-        const {Comment,_id,Reply,Name}=data
+        const {Comment,_id,Reply,Name,replyId,rep}=data
         let UpdateComment
+
+        if(replyId){
+            let totalreply = await commentModel.findById(_id)
+            if(!totalreply)res.status(404).send({status:false,message:"No reply with this id"})
+            let array=totalreply.Reply
+            for(let i=0;i<array.length;i++){
+                if(array[i]._id==replyId){
+                    array[i].reply=rep
+                }
+            }
+            await commentModel.findByIdAndUpdate(_id,{$set:{Reply:array}},{new:true})
+        }
 
         if(Reply){
             let obj = {
